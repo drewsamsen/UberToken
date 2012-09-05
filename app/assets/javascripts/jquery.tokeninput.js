@@ -7,7 +7,7 @@
  * choose which one suits your project best!
  *
  */
-
+var ignored = [];
 (function ($) {
 // Default settings
 var DEFAULT_SETTINGS = {
@@ -31,7 +31,7 @@ var DEFAULT_SETTINGS = {
 	// Tokenization settings
     tokenLimit: null,
     tokenDelimiter: ",",
-    preventDuplicates: false,
+    preventDuplicates: true,
 
 	// Output settings
     tokenValue: "id",
@@ -461,6 +461,9 @@ $.TokenList = function (input, url_or_data, settings) {
         this_token = $(this_token)
           .addClass(settings.classes.token)
           .insertBefore(input_token);
+          ignored.push(item.id);
+          run_search("");
+
 
         // The 'delete token' button
         $("<span>" + settings.deleteText + "</span>")
@@ -469,6 +472,13 @@ $.TokenList = function (input, url_or_data, settings) {
             .click(function () {
                 delete_token($(this).parent());
                 hidden_input.change();
+
+                // Remove this token from the ignored array
+                var position = ignored.indexOf(item.id);
+                if(position != -1) {
+                    ignored.splice(position, 1);
+                }
+
                 return false;
             });
 
@@ -690,23 +700,26 @@ $.TokenList = function (input, url_or_data, settings) {
                 .hide();
 
             $.each(results, function(index, value) {
-                var this_li = settings.resultsFormatter(value);
-                
-                this_li = find_value_and_highlight_term(this_li ,value[settings.propertyToSearch], query);            
-                
-                this_li = $(this_li).appendTo(dropdown_ul);
-                
-                if(index % 2) {
-                    this_li.addClass(settings.classes.dropdownItem);
-                } else {
-                    this_li.addClass(settings.classes.dropdownItem2);
-                }
+                if(ignored.indexOf(value.id) == -1) {
 
-                if(index === 0) {
-                    select_dropdown_item(this_li);
-                }
+                    var this_li = settings.resultsFormatter(value);
+                    
+                    this_li = find_value_and_highlight_term(this_li ,value[settings.propertyToSearch], query);            
+                    
+                    this_li = $(this_li).appendTo(dropdown_ul);
+                    
+                    if(index % 2) {
+                        this_li.addClass(settings.classes.dropdownItem);
+                    } else {
+                        this_li.addClass(settings.classes.dropdownItem2);
+                    }
 
-                $.data(this_li.get(0), "tokeninput", value);
+                    if(index === 0) {
+                        select_dropdown_item(this_li);
+                    }
+
+                    $.data(this_li.get(0), "tokeninput", value);
+                }
             });
 
             show_dropdown();
