@@ -11,6 +11,7 @@
 
 $(function() {
 	$("#project_user_tokens").tokenInput("/users.json", {
-		crossDomain: false
+		crossDomain: false,
+		prePopulate: $("#project_user_tokens").data("load")
 	})
 });

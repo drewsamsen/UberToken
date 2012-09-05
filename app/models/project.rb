@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
 	has_many :users, :through => :assignments
 	attr_reader :user_tokens
 
-	def user_tokens=(ids)
-		self.user_ids = ids.split(",")
+	def user_tokens=(tokens)
+		self.user_ids = User.ids_from_tokens(tokens)
 	end
 end

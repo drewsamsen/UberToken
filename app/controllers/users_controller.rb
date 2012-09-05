@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 		@users = User.order(:name)
 		respond_to do |format|
 			format.html
-			format.json { render :json => @users.where("name ilike ?", "%#{params[:q]}%") }
+			format.json { render :json => @users.tokens(params[:q]) }
 		end
 	end
 
