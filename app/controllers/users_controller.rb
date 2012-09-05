@@ -2,7 +2,11 @@ class UsersController < ApplicationController
 	before_filter :find_user, :only => [:show, :edit, :update, :destroy]
 
 	def index
-		@users = User.all
+		@users = User.order(:name)
+		respond_to do |format|
+			format.html
+			format.json { render :json => @users.where("name ilike ?", "%#{params[:q]}%") }
+		end
 	end
 
 	def new

@@ -7,3 +7,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(function() {
+	$("#project_user_tokens").tokenInput("/users.json", {
+		crossDomain: false
+	})
+});

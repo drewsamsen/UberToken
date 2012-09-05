@@ -5,11 +5,8 @@
     <%= f.text_field :name %>
   </p>
   <p>
-  	<%= hidden_field_tag "project[user_ids][]", nil %>
-  	<% User.all.each do |user| %>
-  		<%= check_box_tag "project[user_ids][]", user.id, @project.user_ids.include?(user.id) %>
-  		<%= user.name %><br>
-  	<% end %>
+  	<%= f.label :user_tokens, "Users" %>
+    <%= f.text_field :user_tokens %>
   </p>
   <%= f.submit %>
 <% end %>
