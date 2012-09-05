@@ -529,7 +529,9 @@ $.TokenList = function (input, url_or_data, settings) {
         input_box.val("");
 
         // Don't show the help dropdown, they've got the idea
-        hide_dropdown();
+        // hide_dropdown();
+        // we re-show the dropdown here to update it's position
+        show_dropdown();
 
         // Execute the onAdd callback if defined
         if($.isFunction(callback)) {
@@ -546,7 +548,7 @@ $.TokenList = function (input, url_or_data, settings) {
         input_box.val("");
 
         // Hide dropdown if it is visible (eg if we clicked to select token)
-        hide_dropdown();
+        // hide_dropdown();
     }
 
     // Deselect a token in the token list
@@ -758,7 +760,7 @@ $.TokenList = function (input, url_or_data, settings) {
                     run_search(query);
                 }, settings.searchDelay);
             } else {
-                hide_dropdown();
+                // hide_dropdown();
             }
         }
     }
