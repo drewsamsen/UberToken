@@ -120,3 +120,10 @@ div.token-input-dropdown-podio ul li.token-input-selected-dropdown-item-podio {
     background-color: #3b5998;
     color: #fff;
 }
+#token-holder {
+    display: none;
+}
+#token-input-project_user_tokens {
+    background: #ccc;
+    width: 100px;
+}

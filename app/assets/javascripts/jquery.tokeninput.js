@@ -392,6 +392,13 @@ $.TokenList = function (input, url_or_data, settings) {
     // Public functions
     //
 
+    // toggles the visibility of the token field editor with an "Add / Remove" link
+    $('#edit-assignments').click(function(){
+        $(this).toggle();
+        $('#token-holder').toggle();
+    }); 
+
+
     this.clear = function() {
         token_list.children("li").each(function() {
             if ($(this).children("input").length === 0) {
