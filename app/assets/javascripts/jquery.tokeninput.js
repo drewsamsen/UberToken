@@ -197,9 +197,8 @@ $.TokenList = function (input, url_or_data, settings) {
             if (settings.tokenLimit === null || settings.tokenLimit !== token_count) {
                 // original line => show_dropdown_hint();
                 // edit by drew to show dropdown on focus
-                show_dropdown_searching();
+                show_dropdown();
                 clearTimeout(timeout);
-
                 timeout = setTimeout(function(){
                     run_search("");
                 }, 5);
@@ -610,7 +609,7 @@ $.TokenList = function (input, url_or_data, settings) {
         selected_token = null;
 
         // Show the input box and give it focus again
-        input_box.focus();
+        // input_box.focus();
 
         // Remove this token from the saved list
         saved_tokens = saved_tokens.slice(0,index).concat(saved_tokens.slice(index+1));
@@ -722,7 +721,7 @@ $.TokenList = function (input, url_or_data, settings) {
                 }
             });
 
-            show_dropdown();
+            // show_dropdown();
 
             if(settings.animateDropdown) {
                 dropdown_ul.slideDown("fast");
@@ -732,7 +731,7 @@ $.TokenList = function (input, url_or_data, settings) {
         } else {
             if(settings.noResultsText) {
                 dropdown.html("<p>"+settings.noResultsText+"</p>");
-                show_dropdown();
+                // show_dropdown();
             }
         }
     }

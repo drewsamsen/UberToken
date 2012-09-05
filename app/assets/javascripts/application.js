@@ -12,6 +12,7 @@
 $(function() {
 	$("#project_user_tokens").tokenInput("/users.json", {
 		crossDomain: false,
+		theme: 'podio',
 		prePopulate: $("#project_user_tokens").data("load")
 	})
 });

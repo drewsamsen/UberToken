@@ -1,2 +1,11 @@
 <h2>Edit Project</h2>
+
+<b>Assigned Users:</b>
+<ul>
+  <% @project.users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</ul>
+
+
 <%= render "form" %>

@@ -1,0 +1,8 @@
+<%= form_for(@project) do |f| %>
+<%= f.error_messages %>
+  
+  <p>
+    <%= f.text_field :user_tokens, data: {load: @project.users} %>
+  </p>
+  <%= f.submit %>
+<% end %>
