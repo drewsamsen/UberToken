@@ -11,14 +11,9 @@ module NavigationHelpers
     when /^the home\s?page$/
       root_path
 
-    when /the note page for "(.*)"/
-      note_path(Note.find_by_subject!($1))
+    when /the project page for "(.*)"/
+      project_path(Project.find_by_name!($1))
 
-    when /^the technology page$/
-      technologies_path
-
-    when /the technology page for "(.*)"/
-      technology_path(Technology.find_by_name!($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
