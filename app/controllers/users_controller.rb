@@ -21,4 +21,19 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+	  if @user.update_attributes(params[:user])
+	  	flash[:notice] = "User has been updated."
+	  	redirect_to @user
+	  else
+	  	flash[:alert] = "User has not been updated."
+	  	render :action => "edit"
+	  end
+	end
 end
