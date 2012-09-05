@@ -1,5 +1,17 @@
 <h2><%= @project.name %></h2>
 
+<% content_for :sidebar do %>
+	<ul>
+		<% @projects.each do |project| %>
+			<% if @project.id == project.id %>
+				<li class="current"><%= link_to project.name, project %></li>
+			<% else %>
+				<li><%= link_to project.name, project %></li>
+			<% end %>
+		<% end %>
+	</ul>
+<% end %>
+
 <b>Assigned Users:</b>
 <ul>
   <% @project.users.each do |user| %>

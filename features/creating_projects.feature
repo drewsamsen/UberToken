@@ -5,7 +5,7 @@ Feature: Creating projects
 
 	Background:
 		Given I am on the homepage
-		When I follow "New Project"
+		When I follow "Create a workspace"
 
 	Scenario: Creating a project
 		And I fill in "Name" with "Coordinate Things"

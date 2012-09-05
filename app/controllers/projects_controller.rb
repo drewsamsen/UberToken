@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
+		@projects = Project.all
 	end
 
 	def edit
