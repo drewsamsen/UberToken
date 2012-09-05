@@ -18,6 +18,7 @@ var DEFAULT_SETTINGS = {
     searchDelay: 300,
     minChars: 1,
     propertyToSearch: "name",
+    showTheirID: "id",
     jsonContainer: null,
 
 	// Display settings
@@ -25,7 +26,7 @@ var DEFAULT_SETTINGS = {
     noResultsText: "No results",
     searchingText: "Searching...",
     deleteText: "&times;",
-    animateDropdown: true,
+    animateDropdown: false,
 
 	// Tokenization settings
     tokenLimit: null,
@@ -43,8 +44,10 @@ var DEFAULT_SETTINGS = {
     idPrefix: "token-input-",
 
 	// Formatters
-    resultsFormatter: function(item){ return "<li>" + item[this.propertyToSearch]+ "</li>" },
-    tokenFormatter: function(item) { return "<li><p>" + item[this.propertyToSearch] + "</p></li>" },
+    resultsFormatter: function(item){ return "<li>" + item[this.propertyToSearch]
+                            + " | id:" + item[this.showTheirID]+"</li>" },
+    tokenFormatter: function(item) { return "<li><p>" + item[this.propertyToSearch]
+                            + " | id:" + item[this.showTheirID]+"</p></li>" },
 
 	// Callbacks
     onResult: null,
@@ -192,7 +195,14 @@ $.TokenList = function (input, url_or_data, settings) {
         .attr("id", settings.idPrefix + input.id)
         .focus(function () {
             if (settings.tokenLimit === null || settings.tokenLimit !== token_count) {
-                show_dropdown_hint();
+                // original line => show_dropdown_hint();
+                // edit by drew to show dropdown on focus
+                show_dropdown_searching();
+                clearTimeout(timeout);
+
+                timeout = setTimeout(function(){
+                    run_search("");
+                }, 5);
             }
         })
         .blur(function () {
@@ -795,7 +805,8 @@ $.TokenList = function (input, url_or_data, settings) {
                   cache.add(cache_key, settings.jsonContainer ? results[settings.jsonContainer] : results);
 
                   // only populate the dropdown if the results are associated with the active search query
-                  if(input_box.val().toLowerCase() === query) {
+                  // original line was => if(input_box.val().toLowerCase() === query) {
+                    if(true) { // this makes the dropdown populat on initial focus
                       populate_dropdown(query, settings.jsonContainer ? results[settings.jsonContainer] : results);
                   }
                 };
