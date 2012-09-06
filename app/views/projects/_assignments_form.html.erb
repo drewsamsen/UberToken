@@ -1,12 +1,10 @@
 <%= form_for(@project) do |f| %>
 <%= f.error_messages %>
   
-  <a href="javascript:void(0)" id="edit-assignments">Add / Remove</a>
+  <a href="javascript:void(0)" id="edit-assignments" class="button"><span>Add / Remove</span></a>
 
   <div id="token-holder">
-  	<p>
-    	<%= f.text_field :user_tokens, data: {load: @project.users} %>
-    </p>
+    <%= f.text_field :user_tokens, data: {load: @project.users} %>
   </div>
   <%= f.submit %>
 <% end %>

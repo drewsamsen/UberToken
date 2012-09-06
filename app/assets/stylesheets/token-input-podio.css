@@ -3,18 +3,20 @@ ul.token-input-list-podio {
     overflow: hidden; 
     height: auto !important; 
     height: 1%;
-    width: 400px;
+    width: 469px;
     border: 1px solid #8496ba;
     cursor: text;
     font-size: 12px;
     font-family: Verdana;
     min-height: 1px;
     z-index: 999;
-    margin: 0;
-    padding: 0;
+    margin: 0 0 0 120px;
+    padding: 0 2px;
     background-color: #fff;
     list-style-type: none;
     clear: left;
+    border: 1px solid #DFDFDF;
+    border-radius: 5px 5px 5px 5px;
 }
 
 ul.token-input-list-podio li input {
@@ -29,19 +31,20 @@ ul.token-input-list-podio li input {
 li.token-input-token-podio {
     overflow: hidden; 
     height: auto !important; 
-    height: 15px;
-    margin: 3px;
-    padding: 1px 3px;
-    background-color: #eff2f7;
     color: #000;
     cursor: default;
-    border: 1px solid #ccd5e4;
-    font-size: 11px;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     float: left;
     white-space: nowrap;
+    position: relative;
+
+    border: 1px solid #E1E1E1;
+    color: #000000;
+    font-size: 1.1rem;
+    margin: 2px 2px 2px 0;
+    padding: 1px 4px 3px 25px;
 }
 
 li.token-input-token-podio p {
@@ -51,10 +54,15 @@ li.token-input-token-podio p {
 }
 
 li.token-input-token-podio span {
-    color: #a6b3cf;
-    margin-left: 5px;
     font-weight: bold;
     cursor: pointer;
+    color: #999999;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin: 1px 5px 0;
+    position: relative;
+    top: 0;
 }
 
 li.token-input-selected-token-podio {
@@ -124,6 +132,24 @@ div.token-input-dropdown-podio ul li.token-input-selected-dropdown-item-podio {
     display: none;
 }
 #token-input-project_user_tokens {
-    background: #ccc;
-    width: 100px;
+    background: url('search-placeholder.png') no-repeat 0 0;
+    width: 110px !important;
+    padding-left: 20px;
+}
+.token-input-dropdown-podio li img {
+    float: left;
+    padding: 0 2px 0 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('avatar-thumb-default.png') no-repeat 0 0;
+}
+.token-input-token-podio img {
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    background: url('avatar-thumb-default.png') no-repeat 0 0;
 }

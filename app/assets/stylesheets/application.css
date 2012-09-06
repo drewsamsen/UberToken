@@ -25,9 +25,17 @@ a, a:active, a:visited {
 #page {
 	float: left;
 	background: url('page-top-bg.jpg') no-repeat 0 0;
-	min-width: 600px;
-	padding: 120px 0 0 0;
+	padding: 115px 0 0 20px;
+	position: relative;
 }
+	#page h2 {
+		font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: 85px;
+    word-wrap: break-word;
+    color: #525252;
+    margin-bottom: 22px;
+	}
 #sidebar {
 	width: 218px;
 	float: left;
@@ -72,7 +80,7 @@ a, a:active, a:visited {
 			color:#3376A4;
 			background:#E9ECEE url('edit-project-bg.jpg') no-repeat 154px 1px;
 		}
-		#sidebar a.create_new {
+		a.button {
 			display: block;
 	    margin-bottom: 14px;
 	    margin-left: 34px;
@@ -100,3 +108,90 @@ a, a:active, a:visited {
 		width: 100px;
 		height: 20px;
 	}
+#project-status {
+	background:#F3F3F3 url('project-status-bar.jpg') no-repeat 0 0;
+	border-top: 1px solid #D8D8D8;
+	height: 30px;
+	margin-bottom: 20px;
+}
+#page h4 {
+	float: left;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+  width: 100px;
+  word-wrap: break-word;
+  margin:0;
+  padding: 4px 20px 0 0;
+}
+#assigned-users {
+	float: left;
+	width: 475px;
+	list-style: none;
+	margin:0 0 5px 0;
+	padding:0;
+}
+	#assigned-users li {
+		clear: left;
+		display: block;
+		margin-bottom: 5px;
+	}
+.avatar {
+	width: 40px;
+	height: 40px;
+	display: block;
+	background: #e1e1e1;
+	float: left;
+	background: url('default-avatar.jpg') no-repeat 0 0;
+	margin-right: 10px;
+}
+	.avatar img {
+		border-radius: 5px 5px 5px 5px;
+    height: 40px;
+    overflow: hidden;
+    width: 40px;
+	}
+.clear {
+	clear: both;
+}
+.inner {
+	background: none repeat scroll 0 0 #F6F6F6;
+  border: 1px solid #DFDFDF;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px;
+  overflow: hidden;
+}
+.inner h5 {
+	color: #3376A4;
+	font-weight: bold;
+	font-size: 1.4rem;
+	margin:0;
+}
+#edit-assignments {
+	width: 120px;
+	background: -moz-linear-gradient(center top , #FFFFFF 1px, #F5F5F5 1px, #EAEAEA 100%) repeat scroll 0 0 transparent;
+  border: 1px solid #DCDCDC;
+  color: #535353;
+  padding-left: 8px;
+  margin-left: 120px;
+}
+#edit-assignments span {
+	background: url('green-cross.png') no-repeat 0 0;
+	padding-left: 18px;
+}
+#edit_link, #delete_link {
+	display: block;
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	top: 125px;
+}
+#edit_link {
+	background: url('edit-and-delete.png') no-repeat 0 0;
+	right: 34px;
+}
+#delete_link {
+	background: url('edit-and-delete.png') no-repeat -31px 0;
+	right: 0;
+}

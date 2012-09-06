@@ -18,7 +18,8 @@ var DEFAULT_SETTINGS = {
     searchDelay: 300,
     minChars: 1,
     propertyToSearch: "name",
-    showTheirID: "id",
+    userID: "id",
+    showAvatar: "avatar_file_name",
     jsonContainer: null,
 
 	// Display settings
@@ -44,10 +45,13 @@ var DEFAULT_SETTINGS = {
     idPrefix: "token-input-",
 
 	// Formatters
-    resultsFormatter: function(item){ return "<li>" + item[this.propertyToSearch]
-                            + " | id:" + item[this.showTheirID]+"</li>" },
-    tokenFormatter: function(item) { return "<li><p>" + item[this.propertyToSearch]
-                            + " | id:" + item[this.showTheirID]+"</p></li>" },
+    resultsFormatter: function(item){ return "<li><img src='/system/users/" + item[this.userID] + "/thumb/" 
+                            + item[this.showAvatar] + "' /><p>" + item[this.propertyToSearch]
+                            + "</p></li>" },
+    tokenFormatter: function(item) { return "<li><img src='/system/users/" + item[this.userID] + "/thumb/" 
+                            + item[this.showAvatar] + "' /><p>" + item[this.propertyToSearch]
+                            + "</p></li>" },
+
 
 	// Callbacks
     onResult: null,

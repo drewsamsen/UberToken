@@ -3,7 +3,10 @@ class User < ActiveRecord::Base
 	has_many :assignments
 	has_many :projects, :through => :assignments
 	attr_accessible :avatar, :name
-	has_attached_file :avatar, :styles => { :medium => "40x40>", :thumb => "16x16>" }
+	has_attached_file :avatar,
+				:styles => { :medium => "40x40>", :thumb => "16x16>" },
+				:path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
+
 
 	def self.tokens(query)
 		users = where("name ilike ?", "%#{query}%") 
