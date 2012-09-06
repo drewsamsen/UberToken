@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905193323) do
+ActiveRecord::Schema.define(:version => 20120906025555) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "project_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20120905193323) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "email"
   end
 
 end

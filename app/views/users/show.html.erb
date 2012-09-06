@@ -1,5 +1,7 @@
 <h2><%= @user.name %> | <%= @user.id %></h2>
 
+<p>Email: <%= @user.email %></p>
+
 <img src="<%= make_avatar_url("medium", @user.id, @user.avatar_file_name) %>" />
 
 <%= link_to "Edit User", edit_user_path(@user) %> |

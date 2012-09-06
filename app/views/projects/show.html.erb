@@ -23,7 +23,27 @@
     		</div><!--img-->
     		<div class="info">
     			<h5><%= user.name %></h5>
+                <% if user.email? %>
+                    <span class="email"><%= user.email %></span>
+                <% end %>
     		</div><!--info-->
+            <div class="gear"></div>
+            <div class="actions">
+                <a class="action-dropdown">
+                    Actions <span class="icon"></span>
+                </a>
+                <div class="action-dropdown-wrapper">
+                    <ul>
+                        <li class="contact-vcard">
+                            <a href="#">Download vCard</a>
+                        </li>
+                        <li class="edit-contact">
+                            <%= link_to "Edit", edit_user_path(user) %>
+                        </li>
+                    </ul>
+                    <div class="overlap"></div>
+                </div><!--action-dropdown-wrapper-->
+            </div><!--actions-->
     	</div><!--inner-->
     </li>
   <% end %>

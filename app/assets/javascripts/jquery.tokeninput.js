@@ -403,6 +403,13 @@ $.TokenList = function (input, url_or_data, settings) {
         $('#token-holder').toggle();
     }); 
 
+    // toggles dropdown menu for editing users from project#show
+    $('.action-dropdown').click(function(){
+        $(this).next('.action-dropdown-wrapper').toggle();
+    }); 
+
+
+
 
     this.clear = function() {
         token_list.children("li").each(function() {
