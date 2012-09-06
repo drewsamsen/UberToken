@@ -1,15 +1,20 @@
-<h2>Projects</h2>
+<h3>What is this?</h3>
+
+<p>The purpose of this app is to demo the UI of a many-to-many token field.</p>
+
+<p>This token field can be found on project pages. Select a project from the sidebar (or create a new one) and use the token field to manage which users are assigned to the project.</p>
+
+<p class="homepage">This was created by Drew Samsen, and this code is <a href="https://github.com/drewsamsen/UberToken">available on github</a> for the curious.</p>
+
+<p>Notice: many of the buttons and links don't work (everything along the top of the page). That is intentional. Those design elements are just to frame the style of the page.</p>
 
 <% content_for :sidebar do %>
 	<ul>
 		<% @projects.each do |project| %>
-			<li><%= link_to project.name, project %></li>
+				<li><%= link_to project.name, project %></li>
 		<% end %>
-	</ul>
+</ul>
 	<%= link_to "Create a workspace", new_project_path, :class => "button" %>
 	<%= link_to "Add a user", new_user_path, :class => "button" %>
 	<%= link_to "View all users", users_path, :class => "button" %>
 <% end %>
- | 
-<%= link_to "New User", new_user_path %> |
-<%= link_to "All Users", users_path %>

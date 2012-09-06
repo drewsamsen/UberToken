@@ -1,11 +1,8 @@
 <ul>
 		<% @projects.each do |project| %>
-			<% if @project.id == project.id %>
-				<li class="current"><%= link_to project.name, project %></li>
-			<% else %>
 				<li><%= link_to project.name, project %></li>
-			<% end %>
 		<% end %>
-	</ul>
+</ul>
 	<%= link_to "Create a workspace", new_project_path, :class => "button" %>
 	<%= link_to "Add a user", new_user_path, :class => "button" %>
+	<%= link_to "View all users", users_path, :class => "button" %>

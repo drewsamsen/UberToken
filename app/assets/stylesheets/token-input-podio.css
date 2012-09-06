@@ -18,6 +18,9 @@ ul.token-input-list-podio {
     border: 1px solid #DFDFDF;
     border-radius: 5px 5px 5px 5px;
 }
+.new-project ul.token-input-list-podio {
+    margin-left:0;
+}
 
 ul.token-input-list-podio li input {
     border: 0;

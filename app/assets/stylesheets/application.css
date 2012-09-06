@@ -27,8 +27,20 @@ a, a:active, a:visited {
 	background: url('page-top-bg.jpg') no-repeat 0 0;
 	padding: 115px 0 0 20px;
 	position: relative;
-	min-width: 550px;
+	width: 598px;
 }
+	#page h1 {
+		color:#3376A4;
+		font-size: 2.5rem;
+		font-weight: normal;
+		margin-bottom: 35px;
+	}
+	#page h3 {
+		color:#3376A4;
+		font-size: 2.2rem;
+		font-weight: normal;
+		margin-bottom: 18px;
+	}
 	#page h2 {
 		font-size: 1.4rem;
     font-weight: bold;
@@ -109,7 +121,7 @@ a, a:active, a:visited {
 		position: absolute;
 		left: 14px;
 		top: 129px;
-		width: 100px;
+		width: 160px;
 		height: 20px;
 	}
 #project-status {
@@ -306,3 +318,32 @@ span.email {
     top: -2px;
     width: 71px;
   	}
+  	p.homepage a {
+  		text-decoration: underline;
+  	}
+  	.float-left {
+  		float: left;
+  		margin: 0 15px 10px 0;
+  	}
+  	#user-list {
+  		list-style: none;
+  		margin: 20px 0;
+  		padding: 0
+  	}
+  		#user-list li {
+  			line-height: 24px;
+  		}
+  	.user-thumb {
+  		float: left;
+  		margin: 3px 8px 0 0;
+  		display: block;
+  		width: 16px;
+  		height: 16px;
+  		background: url('avatar-thumb-default.png') no-repeat 0 0;
+  	}
+
+
+
+
+
+

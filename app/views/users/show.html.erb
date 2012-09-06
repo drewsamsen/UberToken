@@ -1,8 +1,17 @@
-<h2><%= @user.name %> | <%= @user.id %></h2>
+<% content_for :sidebar do %>
+	<%= yield :sidebar %>
+<% end %>
+
+<p>&nbsp;</p>
+<img src="<%= make_avatar_url("medium", @user.id, @user.avatar_file_name) %>" class="float-left" />
+<h2><%= @user.name %></h2>
 
 <p>Email: <%= @user.email %></p>
 
-<img src="<%= make_avatar_url("medium", @user.id, @user.avatar_file_name) %>" />
-
 <%= link_to "Edit User", edit_user_path(@user) %> |
 <%= link_to "Delete", @user, :method => :delete, :confirm => "Are you sure you want to delete this user?" %>
+
+<% content_for :sidebar do %>
+	<%= link_to "Project Home", root_path, :class => "button" %>
+	<%= link_to "Add a user", new_user_path, :class => "button" %>
+<% end %>

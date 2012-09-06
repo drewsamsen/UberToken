@@ -4,7 +4,7 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
-  <p>
+  <p class="new-project">
   	<%= f.label :user_tokens, "Users" %>
     <%= f.text_field :user_tokens, data: {load: @project.users} %>
   </p>

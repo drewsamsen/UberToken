@@ -1,2 +1,6 @@
 <h2>New Project</h2>
 <%= render "form" %>
+
+<% content_for :sidebar do %>
+	<%= link_to "Project Home", root_path, :class => "button" %>
+<% end %>
