@@ -16,7 +16,9 @@
     	<div class="inner">
     		<div class="img">
     			<div class="avatar">
-    				<img src="<%= make_avatar_url("medium", user.id, user.avatar_file_name) %>" />
+                    <% if user.avatar.file? %>
+                      <img src="<%= make_avatar_url("medium", user.id, user.avatar_file_name) %>" />                     
+                    <% end %>    				
     			</div>
     		</div><!--img-->
     		<div class="info">

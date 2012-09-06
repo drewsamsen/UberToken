@@ -27,6 +27,7 @@ a, a:active, a:visited {
 	background: url('page-top-bg.jpg') no-repeat 0 0;
 	padding: 115px 0 0 20px;
 	position: relative;
+	min-width: 550px;
 }
 	#page h2 {
 		font-size: 1.4rem;
@@ -40,7 +41,7 @@ a, a:active, a:visited {
 	width: 218px;
 	float: left;
 	background:#F6F6F6 url('sidebar-vertical-bg.jpg') repeat-y 0 0; 
-	padding:0 0 100px 0;
+	padding:0 0 800px 0;
 	position: relative;
 }
 #sidebar .account {
@@ -99,6 +100,9 @@ a, a:active, a:visited {
 	    margin-bottom: 4px;
 	    text-shadow: none;
 	    white-space: nowrap;
+		}
+		#edit_project_1 input {
+			
 		}
 	#sidebar .home_link {
 		display: block;
@@ -194,4 +198,13 @@ a, a:active, a:visited {
 #delete_link {
 	background: url('edit-and-delete.png') no-repeat -31px 0;
 	right: 0;
+}
+.flash {
+	display: none;
+}
+img.preload {
+	height: 1px;
+	width: 1px;
+	position: relative;
+	left: -9999px;
 }

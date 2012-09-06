@@ -45,13 +45,14 @@ var DEFAULT_SETTINGS = {
     idPrefix: "token-input-",
 
 	// Formatters
-    resultsFormatter: function(item){ return "<li><img src='/system/users/" + item[this.userID] + "/thumb/" 
-                            + item[this.showAvatar] + "' /><p>" + item[this.propertyToSearch]
+    resultsFormatter: function(item){ return "<li><div class='list-thumb'><img src='/system/users/" + item[this.userID] + "/thumb/" 
+                            + item[this.showAvatar] + "' class='" + item[this.showAvatar] + "' /></div><p>" + item[this.propertyToSearch]
                             + "</p></li>" },
     tokenFormatter: function(item) { return "<li><img src='/system/users/" + item[this.userID] + "/thumb/" 
-                            + item[this.showAvatar] + "' /><p>" + item[this.propertyToSearch]
+                            + item[this.showAvatar] + "' class='" + item[this.showAvatar] + "' /><p>" + item[this.propertyToSearch]
                             + "</p></li>" },
 
+                    
 
 	// Callbacks
     onResult: null,
@@ -488,6 +489,8 @@ $.TokenList = function (input, url_or_data, settings) {
                 if(position != -1) {
                     ignored.splice(position, 1);
                 }
+                run_search("");
+                show_dropdown();
 
                 return false;
             });
@@ -663,7 +666,7 @@ $.TokenList = function (input, url_or_data, settings) {
         dropdown
             .css({
                 position: "absolute",
-                top: $(token_list).offset().top + $(token_list).outerHeight(),
+                top: $(token_list).offset().top + $(token_list).outerHeight() - 2,
                 left: $(token_list).offset().left,
                 zindex: 999
             })
@@ -710,9 +713,10 @@ $.TokenList = function (input, url_or_data, settings) {
                 .hide();
 
             $.each(results, function(index, value) {
-                if(ignored.indexOf(value.id) == -1) {
+                if(ignored.indexOf(value.id) == -1) {                    
 
                     var this_li = settings.resultsFormatter(value);
+                    
                     
                     this_li = find_value_and_highlight_term(this_li ,value[settings.propertyToSearch], query);            
                     
