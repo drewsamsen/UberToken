@@ -164,5 +164,5 @@ div.token-input-dropdown-podio ul li.token-input-selected-dropdown-item-podio {
     border: none;
 }
 img.null {
-    display: none;
+   /* display: none; */
 }
