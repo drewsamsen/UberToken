@@ -7,7 +7,13 @@ class User < ActiveRecord::Base
 				:styles => { :medium => "40x40>", :thumb => "16x16>" },
 				# :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension",
 				:path => ":rails_root/app/assets/images/:class/:id/:style/:basename.:extension",
-				:default_url => '/images/missing_:style.png'
+				:default_url => '/images/missing_:style.png',
+				:storage => :s3,
+		    :s3_credentials => {
+		      :bucket            => 'ubertoken',
+		      :access_key_id     => 'AKIAISNOYZRDGVQSRHNA',
+		      :secret_access_key => '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'
+		    }
 
 
 	def self.tokens(query)

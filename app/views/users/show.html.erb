@@ -4,7 +4,9 @@
 
 <p>&nbsp;</p>
 
-<%= make_avatar_url("medium", @user.id, @user.avatar_file_name) %>
+
+<%= image_tag @user.avatar.url(:medium) %>
+
 
 <h2><%= @user.name %></h2>
 

@@ -27,7 +27,7 @@
     	<div class="inner">
     		<div class="img">
     			<div class="avatar">
-                    <%= make_avatar_url("medium", user.id, user.avatar_file_name) %>	
+                    <%= image_tag user.avatar.url(:medium) %>	
     			</div>
     		</div><!--img-->
     		<div class="info">
