@@ -3,7 +3,9 @@
 <% end %>
 
 <p>&nbsp;</p>
-<img src="<%= make_avatar_url("medium", @user.id, @user.avatar_file_name) %>" class="float-left" />
+
+<%= make_avatar_url("medium", @user.id, @user.avatar_file_name) %>
+
 <h2><%= @user.name %></h2>
 
 <p>Email: <%= @user.email %></p>
@@ -14,4 +16,5 @@
 <% content_for :sidebar do %>
 	<%= link_to "Project Home", root_path, :class => "button" %>
 	<%= link_to "Add a user", new_user_path, :class => "button" %>
+	<%= link_to "View all users", users_path, :class => "button" %>
 <% end %>

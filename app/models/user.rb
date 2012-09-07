@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
 	attr_accessible :avatar, :name, :email
 	has_attached_file :avatar,
 				:styles => { :medium => "40x40>", :thumb => "16x16>" },
-				:path => ":rails_root/public/system/:class/:id/:style/:basename.:extension",
+				# :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension",
+				:path => ":rails_root/app/assets/images/:class/:id/:style/:basename.:extension",
 				:default_url => '/images/missing_:style.png'
 
 

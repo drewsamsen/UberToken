@@ -45,12 +45,15 @@ var DEFAULT_SETTINGS = {
     idPrefix: "token-input-",
 
 	// Formatters
-    resultsFormatter: function(item){ return "<li><div class='list-thumb'><img src='/system/users/" + item[this.userID] + "/thumb/" 
-                            + item[this.showAvatar] + "' class='" + item[this.showAvatar] + "' /></div><p>" + item[this.propertyToSearch]
+
+
+    resultsFormatter: function(item){ return "<li><div class='list-thumb'><img src='/assets/users/" + item[this.userID] + "/thumb/" 
+                                + item[this.showAvatar] +"' /></div><p>" + item[this.propertyToSearch]
+                                + "</p></li>" },
+    tokenFormatter: function(item) { return "<li><img src='/assets/users/" + item[this.userID] + "/thumb/" 
+                            + item[this.showAvatar] +"' /><p>" + item[this.propertyToSearch]
                             + "</p></li>" },
-    tokenFormatter: function(item) { return "<li><img src='/system/users/" + item[this.userID] + "/thumb/" 
-                            + item[this.showAvatar] + "' class='" + item[this.showAvatar] + "' /><p>" + item[this.propertyToSearch]
-                            + "</p></li>" },
+
 
                     
 
